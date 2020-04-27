@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    
+    <title>Chat</title>
+    
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html body {
+            width: 100%;
+            height: 100%;
+        }
+        
+        p {
+            color: orange;
+            padding: 5px 10px;
+            margin: 0;
+        }
+        
+        .msg_div {
+            width: 100%;
+        }
+        
+        .self_div {
+            child-align: right;
+            text-align: right;
+        }
+        
+        .user_msg {
+            color: black;
+        }
+        
+        .self_msg {
+            color: #ac2925;
+            display: block;
+            margin-right: 0;
+        }
+        
+        #messages {
+            background: white;
+        }
+        
+        #main {
+            height: 100%;
+        }
+        
+        .scrollable {
+            /*height: 100%;*/
+            /*max-height: 100%;*/
+            /*min-height: 100%;*/
+            height: calc(100vh - 280px);
+            overflow-y: scroll;
+        }
+        
+        .bottom {
+            height: 280px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            overflow-y: scroll;
+        }
+        
+        .nickName-input {
+            width: calc(100vw - 50%);
+            display: inline;
+        }
+        
+        .nickName-btn {
+            width: 20%;
+        }
+        
+        /*style="width: 300px; display:inline"*/
+    </style>
+</head>
+<body>
+    <div id="main" class="container">
+        <div id="msgDiv" class="scrollable">
+            <ul id="messages" class="list-unstyled"></ul>
+        </div>
+        <div class="bottom">
+            <h5>在线人数：<span id="num">0</span>人</h5>
+            <hr />
+            <div class="form-group">
+                <input class="form-control" type="text" id="msgInput" name="message"
+                       placeholder="Input Message Here." value="" autofocus />
+            </div>
+            <button type="button" id="start" class="btn btn-primary" onclick="clickStart()">
+                进入聊天室
+            </button>
+            <button type="button" id="send" class="btn btn-primary" onclick="sendMessage();">
+                发送消息
+            </button>
+            
+            <hr />
+            <div><span>昵称：</span><span id="nickName">匿名用户</span></div>
+            <br />
+            <div>
+                <input class="form-control nickName-input" id="name"
+                       placeholder="NickName Here."
+                       type="text" />
+                <button class="btn btn-sm btn-info nickName-btn" onclick="changName();">修改昵称</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // window.addEventListener("keydown", (e) => {
+        //     console.log(e);
+        //     if (e.code === 'Enter') {
+        //         sendMessage();
+        //     }
+        // });
+        var STATE = {
+            CLOSE: 'close',
+            OPEN: 'open',
+        };
+
+        var DATA_TYPE = {
+            NICKNAME: 'nickName',
+            MESSAGE: 'message',
+            NOTICE: 'notice',
+            FIRST: 'first',
+        };
+
+        var nickName = '匿名用户'; // 我的昵称
+        var server = 'ws://10.10.93.181:8888?nickName=' + nickName;
+
+        var uuid = '';
+
+        var state = STATE.CLOSE;
+
+        var ws = null;
+
+        function startChat() {
+            ws = new WebSocket(server);
+            ws.onopen = function (e) {
+                console.log('Connection to server opened');
+            };
+
+            ws.onmessage = function (e) {
+                var data = JSON.parse(e.data);
+                console.log(data);
+
+                byId('num').innerText = data.num;
+
+                switch (data.type) {
+                    case DATA_TYPE.FIRST:
+                        uuid = data.id;
+                        break;
+
+                    case DATA_TYPE.NICKNAME:
+                    case DATA_TYPE.NOTICE:
+                    case DATA_TYPE.MESSAGE:
+                    default:
+                        appendLog(data.type, data.nickName, data.message, data.id);
+                        break;
+                }
+                console.log("ID: [%s] = %s", data.id, data.message);
+            };
+            //监听连接关闭情况
+            ws.onclose = function (e) {
+                appendLog("Connection closed");
+                console.log("Connection closed");
+            };
+        }
+
+        function closeChat() {
+            ws.close();
+            ws = null;
+        }
+
+        /**
+         * 点击开始按钮
+         */
+        function clickStart() {
+            if (state === STATE.CLOSE) {
+                startChat();    // 开启服务
+                byId('start').innerText = '退出聊天室';
+                state = STATE.OPEN;
+            } else if (state === STATE.OPEN) {
+                closeChat();    // 关闭服务
+                state = STATE.CLOSE;
+                byId('start').innerText = '进入聊天室';
+            }
+        }
+
+        function sendMessage() {
+            var msgInput = byId('msgInput');
+            if (msgInput.value === '') return;
+            if (ws.readyState === WebSocket.OPEN) {
+                let sendData = {
+                    type: DATA_TYPE.MESSAGE,
+                    message: msgInput.value,
+                };
+                ws.send(JSON.stringify(sendData));
+            }
+            msgInput.value = '';
+            msgInput.focus();
+        }
+
+        /**
+         * 修改昵称
+         */
+        function changName() {
+            var name = byId('name').value || '匿名用户';
+            nickName = name;
+            byId('nickName').innerText = nickName;
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                let sendData = {
+                    type: DATA_TYPE.NICKNAME,
+                    message: name
+                };
+                ws.send(JSON.stringify(sendData));
+            }
+        }
+    </script>
+    
+    <script>
+        /**
+         * 在屏幕显示消息
+         * @param type 类型
+         * @param nickname 名字
+         * @param message 消息
+         */
+        function appendLog(type, nickname, message, id) {
+            if (typeof message == "undefined") return;
+            var messages = document.getElementById('messages');
+            var messageElem = document.createElement("li");
+            var preface_label;
+            var message_text;
+            if (type === DATA_TYPE.NOTICE) {
+                preface_label = `<span class="label label-warning"><span>📢</span></span>`;
+                message_text = `<div class="msg_div"><p>${preface_label}&nbsp;&nbsp;${message}</p></div>`
+            } else if (type === DATA_TYPE.NICKNAME) {
+                preface_label = `<span class="label label-warning"><span>🔔</span></span>`;
+                message_text = `<div class="msg_div"><p>${preface_label}&nbsp;&nbsp;${message}</p></div>`
+            } else if (uuid === id) {
+                preface_label = `<span class="label label-info">我</span>`;
+                message_text = `<div class="self_div"><p class="self_msg">${message}&nbsp;&nbsp;${preface_label}</p></div>`
+            } else {
+                preface_label = `<span class="label label-default">${nickname}</span>`;
+                message_text = `<div class="msg_div"><p class="user_msg">${preface_label}&nbsp;&nbsp;${message}</p></div>`
+            }
+            messageElem.innerHTML = message_text;
+            messages.appendChild(messageElem);
+
+            messages.scrollTop = messages.scrollHeight;
+
+            let msgDiv = byId('msgDiv');
+            msgDiv.scrollTop = msgDiv.scrollHeight;
+        }
+    </script>
+    
+    <script>
+        window.byId = function (id) {
+            return document.getElementById(id);
+        };
+
+        clickStart();
+    </script>
+
+</body>
+</html>

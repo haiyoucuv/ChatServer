@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c0cf08c8-c261-478e-8694-03a8af4289c3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="chat_server" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1b6eEIiipN9QQ8WNo9ahWbsRWOP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.14.0" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/demo" />
+      <recent name="$PROJECT_DIR$/server" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server/index.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.index.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c0cf08c8-c261-478e-8694-03a8af4289c3" name="Default Changelist" comment="" />
+      <created>1587956857167</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587956857167</updated>
+      <workItem from="1587956858717" duration="29013000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="457" y="202" key="#HTML" timestamp="1587968809004">
+      <screen x="35" y="23" width="1645" height="1027" />
+    </state>
+    <state x="457" y="202" key="#HTML/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1587968809004" />
+    <state width="966" height="466" key="DebuggerActiveHint" timestamp="1587980737238">
+      <screen x="35" y="23" width="1645" height="1027" />
+    </state>
+    <state width="966" height="466" key="DebuggerActiveHint/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1587980737238" />
+    <state width="356" height="655" key="GridCell.Tab.0.bottom" timestamp="1587992354807">
+      <screen x="35" y="23" width="1645" height="1027" />
+    </state>
+    <state width="356" height="655" key="GridCell.Tab.0.bottom/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1587992354807" />
+    <state width="356" height="655" key="GridCell.Tab.0.center" timestamp="1587992354806">
+      <screen x="35" y="23" width="1645" height="1027" />
+    </state>
+    <state width="356" height="655" key="GridCell.Tab.0.center/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1587992354806" />
+    <state width="356" height="655" key="GridCell.Tab.0.left" timestamp="1587992354806">
+      <screen x="35" y="23" width="1645" height="1027" />
+    </state>
+    <state width="356" height="655" key="GridCell.Tab.0.left/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1587992354806" />
+    <state width="356" height="655" key="GridCell.Tab.0.right" timestamp="1587992354806">
+      <screen x="35" y="23" width="1645" height="1027" />
+    </state>
+    <state width="356" height="655" key="GridCell.Tab.0.right/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1587992354806" />
+    <state x="522" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1587990176641">
+      <screen x="35" y="23" width="1645" height="1027" />
+    </state>
+    <state x="522" y="250" width="670" height="676" key="search.everywhere.popup/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1587990176641" />
+  </component>
+</project>
