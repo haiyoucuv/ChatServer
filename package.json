@@ -5,13 +5,13 @@
     "main": "server/index.js",
     "scripts": {
         "dev": "anywhere -p 8080",
-        "server": "node ./server/index.js"
+        "server": "node ./server/index.js",
+        "pms": "pm2 start ./server/index.js --watch"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "anywhere": "^1.5.0",
         "http-server": "^0.12.1",
         "uuid": "^7.0.3",
         "ws": "^7.2.5",
