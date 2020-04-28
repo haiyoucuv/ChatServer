@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "anywhere -p 8080",
         "server": "node ./server/index.js",
-        "pms": "pm2 start ./server/index.js --watch"
+        "pm2s": "pm2 start ./server/index.js --watch"
     },
     "keywords": [],
     "author": "",
