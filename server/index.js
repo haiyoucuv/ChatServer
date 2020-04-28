@@ -19,7 +19,7 @@ let clients = {};
 let count = 0;
 
 let wss = new ws.Server({
-    host: '10.10.93.181',
+    host: '10.10.93.181',   // your ip
     port: 8888
 });
 

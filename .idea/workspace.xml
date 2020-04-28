@@ -4,6 +4,7 @@
     <list default="true" id="c0cf08c8-c261-478e-8694-03a8af4289c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,12 +52,34 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server/index.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="server" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.server" />
         <item itemvalue="Node.js.index.js" />
       </list>
     </recent_temporary>
@@ -73,7 +96,7 @@
       <updated>1587956857167</updated>
       <workItem from="1587956858717" duration="29670000" />
       <workItem from="1587993432808" duration="1227000" />
-      <workItem from="1588038016125" duration="1029000" />
+      <workItem from="1588038016125" duration="1261000" />
     </task>
     <servers />
   </component>
@@ -85,26 +108,30 @@
       <screen x="35" y="23" width="1645" height="1027" />
     </state>
     <state x="457" y="202" key="#HTML/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1587968809004" />
+    <state x="464" y="135" key="CommitChangelistDialog2" timestamp="1588040721920">
+      <screen x="35" y="23" width="1645" height="1027" />
+    </state>
+    <state x="464" y="135" key="CommitChangelistDialog2/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1588040721920" />
     <state width="966" height="466" key="DebuggerActiveHint" timestamp="1587980737238">
       <screen x="35" y="23" width="1645" height="1027" />
     </state>
     <state width="966" height="466" key="DebuggerActiveHint/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1587980737238" />
-    <state width="1603" height="138" key="GridCell.Tab.0.bottom" timestamp="1587993144381">
+    <state width="356" height="655" key="GridCell.Tab.0.bottom" timestamp="1588040643542">
       <screen x="35" y="23" width="1645" height="1027" />
     </state>
-    <state width="1603" height="138" key="GridCell.Tab.0.bottom/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1587993144381" />
-    <state width="1603" height="138" key="GridCell.Tab.0.center" timestamp="1587993144380">
+    <state width="356" height="655" key="GridCell.Tab.0.bottom/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1588040643542" />
+    <state width="356" height="655" key="GridCell.Tab.0.center" timestamp="1588040643541">
       <screen x="35" y="23" width="1645" height="1027" />
     </state>
-    <state width="1603" height="138" key="GridCell.Tab.0.center/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1587993144380" />
-    <state width="1603" height="138" key="GridCell.Tab.0.left" timestamp="1587993144380">
+    <state width="356" height="655" key="GridCell.Tab.0.center/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1588040643541" />
+    <state width="356" height="655" key="GridCell.Tab.0.left" timestamp="1588040643541">
       <screen x="35" y="23" width="1645" height="1027" />
     </state>
-    <state width="1603" height="138" key="GridCell.Tab.0.left/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1587993144380" />
-    <state width="1603" height="138" key="GridCell.Tab.0.right" timestamp="1587993144381">
+    <state width="356" height="655" key="GridCell.Tab.0.left/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1588040643541" />
+    <state width="356" height="655" key="GridCell.Tab.0.right" timestamp="1588040643542">
       <screen x="35" y="23" width="1645" height="1027" />
     </state>
-    <state width="1603" height="138" key="GridCell.Tab.0.right/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1587993144381" />
+    <state width="356" height="655" key="GridCell.Tab.0.right/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1588040643542" />
     <state x="522" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1587990176641">
       <screen x="35" y="23" width="1645" height="1027" />
     </state>
