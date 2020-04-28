@@ -248,7 +248,7 @@
             var msgInput = byId('msgInput');
             if (msgInput.value === '') return;
             if (ws.readyState === WebSocket.OPEN) {
-                let sendData = {
+                var sendData = {
                     type: DATA_TYPE.MESSAGE,
                     message: msgInput.value,
                 };
@@ -267,7 +267,7 @@
             window.localStorage.setItem('nickName', nickName);
             byId('nickName').innerText = nickName;
             if (ws && ws.readyState === WebSocket.OPEN) {
-                let sendData = {
+                var sendData = {
                     type: DATA_TYPE.NICKNAME,
                     message: name
                 };

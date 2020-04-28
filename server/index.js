@@ -7,7 +7,7 @@
 const ws = require('ws');
 let uuid = require('uuid');
 
-var DATA_TYPE = {
+const DATA_TYPE = {
     NICKNAME: 'nickName',
     MESSAGE: 'message',
     NOTICE: 'notice',
