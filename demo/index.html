@@ -123,6 +123,46 @@
     </div>
     
     <script>
+        window.byId = function (id) {
+            return document.getElementById(id);
+        };
+
+        /**
+         * 在屏幕显示消息
+         * @param type 类型
+         * @param nickname 名字
+         * @param message 消息
+         */
+        function appendLog(type, nickname, message, id) {
+            if (typeof message == "undefined") return;
+            var messages = document.getElementById('messages');
+            var messageElem = document.createElement("li");
+            var preface_label;
+            var message_text;
+            if (type === DATA_TYPE.NOTICE) {
+                preface_label = `<span class="label label-warning"><span>📢</span></span>`;
+                message_text = `<div class="msg_div"><p>${preface_label}&nbsp;&nbsp;${message}</p></div>`
+            } else if (type === DATA_TYPE.NICKNAME) {
+                preface_label = `<span class="label label-warning"><span>🔔</span></span>`;
+                message_text = `<div class="msg_div"><p>${preface_label}&nbsp;&nbsp;${message}</p></div>`
+            } else if (uuid === id) {
+                preface_label = `<span class="label label-info">我</span>`;
+                message_text = `<div class="self_div"><p class="self_msg">${message}&nbsp;&nbsp;${preface_label}</p></div>`
+            } else {
+                preface_label = `<span class="label label-default">${nickname}</span>`;
+                message_text = `<div class="msg_div"><p class="user_msg">${preface_label}&nbsp;&nbsp;${message}</p></div>`
+            }
+            messageElem.innerHTML = message_text;
+            messages.appendChild(messageElem);
+
+            messages.scrollTop = messages.scrollHeight;
+
+            let msgDiv = byId('msgDiv');
+            msgDiv.scrollTop = msgDiv.scrollHeight;
+        }
+    </script>
+    
+    <script>
         // window.addEventListener("keydown", (e) => {
         //     console.log(e);
         //     if (e.code === 'Enter') {
@@ -141,7 +181,8 @@
             FIRST: 'first',
         };
 
-        var nickName = '匿名用户'; // 我的昵称
+        var nickName = window.localStorage.getItem('nickName') || '匿名用户'; // 我的昵称
+        byId('nickName').innerText = nickName;
         var server = 'ws://10.10.93.181:8888?nickName=' + nickName;
 
         var uuid = '';
@@ -223,6 +264,7 @@
         function changName() {
             var name = byId('name').value || '匿名用户';
             nickName = name;
+            window.localStorage.setItem('nickName', nickName);
             byId('nickName').innerText = nickName;
             if (ws && ws.readyState === WebSocket.OPEN) {
                 let sendData = {
@@ -232,51 +274,8 @@
                 ws.send(JSON.stringify(sendData));
             }
         }
-    </script>
-    
-    <script>
-        /**
-         * 在屏幕显示消息
-         * @param type 类型
-         * @param nickname 名字
-         * @param message 消息
-         */
-        function appendLog(type, nickname, message, id) {
-            if (typeof message == "undefined") return;
-            var messages = document.getElementById('messages');
-            var messageElem = document.createElement("li");
-            var preface_label;
-            var message_text;
-            if (type === DATA_TYPE.NOTICE) {
-                preface_label = `<span class="label label-warning"><span>📢</span></span>`;
-                message_text = `<div class="msg_div"><p>${preface_label}&nbsp;&nbsp;${message}</p></div>`
-            } else if (type === DATA_TYPE.NICKNAME) {
-                preface_label = `<span class="label label-warning"><span>🔔</span></span>`;
-                message_text = `<div class="msg_div"><p>${preface_label}&nbsp;&nbsp;${message}</p></div>`
-            } else if (uuid === id) {
-                preface_label = `<span class="label label-info">我</span>`;
-                message_text = `<div class="self_div"><p class="self_msg">${message}&nbsp;&nbsp;${preface_label}</p></div>`
-            } else {
-                preface_label = `<span class="label label-default">${nickname}</span>`;
-                message_text = `<div class="msg_div"><p class="user_msg">${preface_label}&nbsp;&nbsp;${message}</p></div>`
-            }
-            messageElem.innerHTML = message_text;
-            messages.appendChild(messageElem);
-
-            messages.scrollTop = messages.scrollHeight;
-
-            let msgDiv = byId('msgDiv');
-            msgDiv.scrollTop = msgDiv.scrollHeight;
-        }
-    </script>
-    
-    <script>
-        window.byId = function (id) {
-            return document.getElementById(id);
-        };
 
         clickStart();
     </script>
-
 </body>
 </html>
