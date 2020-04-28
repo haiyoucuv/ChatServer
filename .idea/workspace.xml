@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c0cf08c8-c261-478e-8694-03a8af4289c3" name="Default Changelist" comment="">
+    <list default="true" id="c0cf08c8-c261-478e-8694-03a8af4289c3" name="Default Changelist" comment="1">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,22 +100,41 @@
       <updated>1587956857167</updated>
       <workItem from="1587956858717" duration="29670000" />
       <workItem from="1587993432808" duration="1227000" />
-      <workItem from="1588038016125" duration="1261000" />
+      <workItem from="1588038016125" duration="1478000" />
     </task>
+    <task id="LOCAL-00001" summary="1">
+      <created>1588040763774</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588040763774</updated>
+    </task>
+    <task id="LOCAL-00002" summary="1">
+      <created>1588040809117</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588040809117</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="457" y="202" key="#HTML" timestamp="1587968809004">
       <screen x="35" y="23" width="1645" height="1027" />
     </state>
     <state x="457" y="202" key="#HTML/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1587968809004" />
-    <state x="464" y="135" key="CommitChangelistDialog2" timestamp="1588040763382">
+    <state x="464" y="135" key="CommitChangelistDialog2" timestamp="1588040880990">
       <screen x="35" y="23" width="1645" height="1027" />
     </state>
-    <state x="464" y="135" key="CommitChangelistDialog2/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1588040763382" />
+    <state x="464" y="135" key="CommitChangelistDialog2/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1588040880990" />
     <state width="966" height="466" key="DebuggerActiveHint" timestamp="1587980737238">
       <screen x="35" y="23" width="1645" height="1027" />
     </state>
@@ -137,6 +155,10 @@
       <screen x="35" y="23" width="1645" height="1027" />
     </state>
     <state width="356" height="655" key="GridCell.Tab.0.right/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1588040643542" />
+    <state x="618" y="254" key="RollbackChangesDialog" timestamp="1588040838933">
+      <screen x="35" y="23" width="1645" height="1027" />
+    </state>
+    <state x="618" y="254" key="RollbackChangesDialog/35.23.1645.1027/1680.-229.1920.1177@35.23.1645.1027" timestamp="1588040838933" />
     <state x="457" y="276" key="Vcs.Push.Dialog.v2" timestamp="1588040765773">
       <screen x="35" y="23" width="1645" height="1027" />
     </state>
